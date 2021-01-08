@@ -1,0 +1,19 @@
+{
+  "name": "oop",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git",
+    "cors": "^2.8.5",
+    "axios": "^0.21.1"
+  },
+  "main": "Server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "4.4.5"
+  }
+}
