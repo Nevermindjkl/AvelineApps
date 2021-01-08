@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Aveline / Login</title>
+    <link rel="icon" type="image/webp" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@3/bootstrap-4.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    
+    <meta property="og:title" content="Aveline Classrooms / Home" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Platform created with love for Aveline Academy" />
+    <meta property="og:site_name" content="AvelineClassrooms" />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-switch@02.0.0/dist/css/bulma-switch.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/css/bulma-accordion.min.css">
+    <link rel="stylesheet" media="all" href="/css/global.css" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js%402/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js" integrity="sha512-sl01o/gVwybF1FNzqO4NDRDNPJDupfN0o2+tMm4K2/nr35FjGlxlvXZ6kK6faa9zhXbnfLIXioHnExuwJdlTMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript" ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie_canvas.min.js" integrity="sha512-cJ9NkqBpd7MTt0/vyS66oTLYghcEc9NdMLJ4XUMNgEtgzpxMIxtGi+pThPN+HXrWc/MBaTplcirMUNWLknXrDA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/954474a9fd.js" crossorigin="anonymous" async="async" defer="defer"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script> 
+        const firebaseConfig = {apiKey: "AIzaSyDhMsA9WEXh7zPz3YYeJMP6jfdpwjXJo1Y",authDomain: "avelineapps.firebaseapp.com",databaseURL: "https://avelineapps.firebaseio.com",projectId: "avelineapps",storageBucket: "avelineapps.appspot.com",messagingSenderId: "105961411008",appId: "1:105961411008:web:b5a38cfc01bec0fe5bb825",measurementId: "G-WNYDVFJPXR"};
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script>
+     const API = "https://api.avelineacademy.xyz"
+     const URL = "https://avelineacademy.glitch.me"
+    </script>
+
+
+
+
+
+
+</head>
+
+<body class="has-navbar-fixed-top">
+  <nav class="navbar is-transparent is-hidden-touch is-fixed-top is-spaced">
+    <div class="navbar-brand">
+
+      <a class="navbar-item" href="/" data-balloon="📚 We're Aveline" data-balloon-pos="right">
+        <img style="border-radius: 10%;" src="https://t4.rbxcdn.com/394f0415e7db62d9386dc1bb17f60e24" />
+      </a>
+
+      <div class="navbar-item" style="margin: 0 -0.7rem">
+          <span class="has-text-grey-light">|</span>
+      </div>
+
+      <div class="navbar-item">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </div>
+      
+
+
+    </div>
+
+
+  </nav>
+
+
+  <section class="section">
+      
+      <div class="column is-6 is-offset-1 is-hidden-touch" style="z-index: 1; position: absolute;">
+        <p class="title"><span style="font-size: 2.5rem">Hello, welcome to classrooms</span></p>
+        <p class="subtitle"><span style="font-size: 1.5rem" id="usernameprofile"></span></p>
+
+        
+
+
+
+        <hr class="primary">
+        <p class="subtitle is-4"><i>"We're the next Generation of Ro-Schooling"</i></p>
+
+
+            <div class="field">
+                <div class="button button-special is-large box-shadow-lift">
+                    <input id="email" class="input" type="text" placeholder="E-mail">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="button button-special is-large box-shadow-lift">
+                    <input id="password" class="input" type="password" placeholder="Password" >
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-key"></i>
+                    </span>
+                </div>
+            </div>
+
+            <a onclick="sessionlogin()" class="button button-special is-medium is-rounded box-shadow-lift" style="border: none">
+            <span>Login as Student, Teacher or School staff</span>
+            <span class="icon has-text-link">
+              <i class="fad fa-arrow-alt-right"></i>
+            </span>
+          </a>
+
+        </div>
+
+        
+      </div>
+
+
+      <div class="column has-text-centered is-hidden-desktop">
+        <div class="column has-text-centered">
+        </div>
+        <p class="title">Aveline Classrooms</p>
+        <p class="subtitle is-5"><i>"We're the next Generation of Ro-Schooling"</i></p>
+        <div class="column">
+          <a href="/login" class="button button-special is-medium is-rounded box-shadow-lift" style="border: none">
+            <span>Login as Student, Teacher or School Staff</span>
+            <span class="icon has-text-danger">
+              <i class="fad fa-arrow-alt-right"></i>
+            </span>
+          </a>
+        </div>
+        <figure class="image">
+          <img alt="home-page-banner-3d-figure" src="https://cdn.discordapp.com/attachments/673110786767585297/780063071522652180/avelin.png" />
+        </figure>
+      </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function() {
+    $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top + (-80)
+            }, 1000);
+            return false;
+        }
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#demo-1, #demo-2, #demo-3").hide();
+
+  $("#btn-1").click(function(){
+    $("#demo-1").show();
+    $("#demo-0, #demo-2, #demo-3").hide();
+    $("html, body").animate({
+          scrollTop: $("#demo-top").offset().top
+      }, "slow");
+  });
+
+  $("#btn-2").click(function(){
+    $("#demo-2").show();
+    $("#demo-0, #demo-1, #demo-3").hide();
+    $("html, body").animate({
+          scrollTop: $("#demo-top").offset().top
+      }, "slow");
+  });
+
+  $("#btn-3").click(function(){
+    $("#demo-3").show();
+    $("#demo-0, #demo-1, #demo-2").hide();
+    $("html, body").animate({
+          scrollTop: $("#demo-top").offset().top
+      }, "slow");
+  });
+});
+</script>
+
+<script>
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+  function switchTheme(e) {
+      if (e.target.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark'); //add this
+      }
+      else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light'); //add this
+      }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+  if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+          toggleSwitch.checked = true;
+      }
+  }
+</script>
+
+    
+     
+  
+</body>
+
+<script src="/js/global.js"></script>
+<script src="/authenticate.js"></script>
+<script>
+  $(document).ready(function() {
+  $(".navbar-burger").click(function() {
+  $(".navbar-burger").toggleClass("is-active");
+  $(".navbar-menu").toggleClass("is-active");
+
+  });
+});
+</script>
+
